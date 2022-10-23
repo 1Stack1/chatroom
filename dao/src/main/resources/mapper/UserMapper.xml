@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.dao.UserDao">
+    <select id="selectUserByUsernameOrEmailAndPassword" resultType="User">
+        SELECT username FROM `sys_user` WHERE (username=#{usernameOrEmail} or email=#{usernameOrEmail}) AND password =#{password};
+	</select>
+
+    <select id="selectByUsername" resultType="User">
+        SELECT username,password FROM `sys_user` WHERE username=#{username}
+    </select>
+
+    <select id="selectByEmail" resultType="User">
+        SELECT username FROM `sys_user` WHERE email=#{email}
+    </select>
+
+    <insert id="insertUsernameAndPasswordAndEmail">
+        INSERT INTO `sys_user`(username,password,email) VALUES(#{username},#{password},#{email})
+    </insert>
+
+    <update id="updateInfoByUsername">
+        UPDATE `sys_user` SET realname=#{realname},college=#{college} WHERE username=#{username}
+    </update>
+
+    <select id="selectRoleByUsername" resultType="string">
+        SELECT rolename as authoritiesStrs
+        FROM sys_role r
+                 JOIN sys_user_role ur ON r.id=ur.roleId
+                 JOIN sys_user u  ON u.id=ur.userId
+        WHERE u.id=(
+            SELECT id
+            FROM sys_user
+            WHERE username=#{username})
+    </select>
+</mapper>
