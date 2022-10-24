@@ -26,8 +26,8 @@
     <select id="selectRoleByUsername" resultType="string">
         SELECT rolename as authoritiesStrs
         FROM sys_role r
-                 JOIN sys_user_role ur ON r.id=ur.roleId
-                 JOIN sys_user u  ON u.id=ur.userId
+                 JOIN sys_user_role ur ON r.id=ur.role_Id
+                 JOIN sys_user u  ON u.id=ur.user_Id
         WHERE u.id=(
             SELECT id
             FROM sys_user

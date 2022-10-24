@@ -1,13 +1,17 @@
 package com.example.server.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.example.common.bean.Group;
 import com.example.common.constant.OnlineUser;
+import com.example.dao.dao.GroupDao;
 import com.example.server.reposity.HistoryRepository;
 import com.example.common.bean.Message;
 import com.example.server.service.ChatService;
 import com.example.common.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 import javax.websocket.*;
 import java.io.IOException;
 import java.util.*;
@@ -17,6 +21,9 @@ public class ChatServiceImpl implements ChatService {
 
     @Autowired
     RedisCache redisCache;
+
+    @Resource
+    GroupDao groupDao;
 
     @Autowired
     HistoryRepository historyRepository;
@@ -35,7 +42,11 @@ public class ChatServiceImpl implements ChatService {
         System.out.println("当前用户名====" + username);
         if(!sessionMap.containsKey(username)){//如果用户当前未登录
             sessionMap.put(username, session);
-            sendAllUsers(sendAllUsernames());
+            List<Group> groups = groupDao.selectGroupsByUserName(username);
+            String s = JSON.toJSONString(groups);
+            System.out.println(s);
+            sendUser(s,session);
+            //sendAllUsers(sendAllUsernames());
         }else{//向邮箱发送验证码
 
         }

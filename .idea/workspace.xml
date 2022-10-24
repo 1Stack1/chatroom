@@ -7,7 +7,17 @@
     <option name="showContexts" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="" />
+    <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/DaoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/GroupDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +30,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="mybatis-mapper" />
       </list>
     </option>
   </component>
@@ -54,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -94,6 +108,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServerApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DaoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
@@ -163,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServerApplicationTests.test01" />
         <item itemvalue="JUnit.DaoApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ServerApplicationTests.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +214,7 @@
       <workItem from="1666592059425" duration="77000" />
       <workItem from="1666593452373" duration="606000" />
       <workItem from="1666596699061" duration="2229000" />
-      <workItem from="1666599102472" duration="1354000" />
+      <workItem from="1666599102472" duration="8612000" />
     </task>
     <servers />
   </component>
@@ -205,23 +232,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/common/src/main/java/com/example/common/constant/OnlineUser.java</url>
-          <line>9</line>
-          <properties field="onlineUserMap" class="com.example.common.constant.OnlineUser" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/common/src/main/java/com/example/common/constant/OnlineUser.java</url>
-          <line>10</line>
-          <properties field="onlineUserSet" class="com.example.common.constant.OnlineUser" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.dao.GroupDao">
+    <select id="selectGroupsByUserId" resultType="Group">
+        select id,group_name as groupName,max_num as maxNum,now_num as nowNum
+        from `group`
+        where owner_id=#{id}
+	</select>
+
+    <select id="selectGroupsByUserName" resultType="Group">
+        select id,group_name as groupName,max_num as maxNum,now_num as nowNum
+        from `group`
+        where owner_id=(select id
+                        from sys_user
+                        where username=#{username})
+    </select>
+</mapper>
