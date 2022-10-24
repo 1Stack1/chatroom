@@ -19,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -44,7 +45,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="2GL6Ew5WBux5XG0aM9c9NT4zZjE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -177,6 +180,14 @@
       <workItem from="1666167788326" duration="194000" />
       <workItem from="1666260397917" duration="7308000" />
       <workItem from="1666431844834" duration="719000" />
+      <workItem from="1666501761634" duration="751000" />
+      <workItem from="1666517511124" duration="35000" />
+      <workItem from="1666521109609" duration="2339000" />
+      <workItem from="1666590249257" duration="35000" />
+      <workItem from="1666592059425" duration="77000" />
+      <workItem from="1666593452373" duration="606000" />
+      <workItem from="1666596699061" duration="2229000" />
+      <workItem from="1666599102472" duration="1354000" />
     </task>
     <servers />
   </component>
