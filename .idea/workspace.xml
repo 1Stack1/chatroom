@@ -8,15 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/DaoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/GroupDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/GroupMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/FriendMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +102,7 @@
       <recent name="com.example.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServerApplication">
+  <component name="RunManager" selected="JUnit.DaoApplicationTests.test02">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -132,6 +127,22 @@
       <option name="PACKAGE_NAME" value="com.example.dao" />
       <option name="MAIN_CLASS_NAME" value="com.example.dao.DaoApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoApplicationTests.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.DaoApplicationTests" />
+      <option name="METHOD_NAME" value="test02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,6 +201,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DaoApplicationTests.test02" />
         <item itemvalue="JUnit.DaoApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ServerApplicationTests.test01" />
       </list>
@@ -214,7 +226,7 @@
       <workItem from="1666592059425" duration="77000" />
       <workItem from="1666593452373" duration="606000" />
       <workItem from="1666596699061" duration="2229000" />
-      <workItem from="1666599102472" duration="8612000" />
+      <workItem from="1666599102472" duration="14203000" />
     </task>
     <servers />
   </component>

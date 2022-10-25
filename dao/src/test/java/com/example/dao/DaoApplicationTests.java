@@ -1,7 +1,9 @@
 package com.example.dao;
 
 
+import com.example.common.bean.Friend;
 import com.example.common.bean.Group;
+import com.example.dao.dao.FriendDao;
 import com.example.dao.dao.GroupDao;
 import com.example.dao.dao.UserDao;
 import org.junit.jupiter.api.Test;
@@ -15,6 +17,8 @@ class DaoApplicationTests {
 
     @Autowired
     GroupDao groupDao;
+    @Autowired
+    FriendDao friendDao;
 
     @Test
     void contextLoads() {
@@ -25,4 +29,11 @@ class DaoApplicationTests {
         }
     }
 
+    @Test
+    void test02(){
+        List<Friend> friends = friendDao.selectFriendsByGroupId(6);
+        for(Friend friend:friends){
+            System.out.println(friend);
+        }
+    }
 }
