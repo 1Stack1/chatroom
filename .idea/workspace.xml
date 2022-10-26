@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/FriendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/DaoApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +24,9 @@
       <list>
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="mybatis-mapper" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,7 +70,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java/multipart" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -103,15 +101,13 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DaoApplicationTests.test02">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,7 +222,8 @@
       <workItem from="1666592059425" duration="77000" />
       <workItem from="1666593452373" duration="606000" />
       <workItem from="1666596699061" duration="2229000" />
-      <workItem from="1666599102472" duration="14203000" />
+      <workItem from="1666599102472" duration="16344000" />
+      <workItem from="1666791262881" duration="1341000" />
     </task>
     <servers />
   </component>
