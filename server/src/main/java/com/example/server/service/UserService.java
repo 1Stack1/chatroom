@@ -21,7 +21,7 @@ public interface UserService {
     /**
      *修改用户信息操作
      */
-    int updateInfo(User user, HttpServletRequest request);
+    Result updateInfo(User user);
 
 
     /**

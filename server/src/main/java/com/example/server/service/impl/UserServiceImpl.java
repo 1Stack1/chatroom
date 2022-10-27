@@ -121,19 +121,18 @@ public class UserServiceImpl implements UserService {
     /**
      * 用户修改自己的密保信息
      * @param user  前端发送的User类型的json数据
-     * @param request   前端的请求,目的是从对话域中取出用户名,以修改数据库该用户的账号
      * @return  判断用户是否注册完了在填写信息
      */
     @Override
-    public int updateInfo(User user, HttpServletRequest request) {
-        String username = (String)request.getSession().getAttribute("username");
+    public Result updateInfo(User user) {
+        String username = user.getUsername();
         String realname = user.getRealname();
         String college=user.getCollege();
         if(username!=null){
             userDao.updateInfoByUsername(realname,college,username);
-            return 200;
+            return new Result(StatusCode.UpdateInfoSuccess.getCode(), "用户信息修改成功",null);
         }else{
-            return 400;
+            return new Result(StatusCode.UpdateInfoFail.getCode(), "用户信息修改失败",null);
         }
     }
 

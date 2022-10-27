@@ -31,8 +31,8 @@ public class UserController {
 
     //修改用户密保信息
     @RequestMapping("/updateInfo")
-    public  int updateInfo(@RequestBody User user,HttpServletRequest request){
-        return userService.updateInfo(user,request);
+    public  Result updateInfo(@RequestBody User user){
+        return userService.updateInfo(user);
     }
 
 
