@@ -16,7 +16,7 @@ public interface UserService {
     /**
      *注册操作
      */
-    int singup(User user,HttpServletRequest request);
+    Result singup(User user,HttpServletRequest request);
 
     /**
      *修改用户信息操作

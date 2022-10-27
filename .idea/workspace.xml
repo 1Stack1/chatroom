@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/DaoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java/multipart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -100,7 +102,7 @@
       <recent name="com.example.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DaoApplicationTests.test02">
+  <component name="RunManager" selected="Spring Boot.ServerApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -224,6 +226,9 @@
       <workItem from="1666596699061" duration="2229000" />
       <workItem from="1666599102472" duration="16344000" />
       <workItem from="1666791262881" duration="1341000" />
+      <workItem from="1666793439716" duration="1168000" />
+      <workItem from="1666866940563" duration="3337000" />
+      <workItem from="1666871070373" duration="1347000" />
     </task>
     <servers />
   </component>

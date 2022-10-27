@@ -1,6 +1,7 @@
 package com.example.server.service.impl;
 
 import com.example.common.bean.Result;
+import com.example.common.bean.StatusCode;
 import com.example.common.bean.User;
 import com.example.common.constant.OnlineUser;
 import com.example.dao.dao.UserDao;
@@ -64,10 +65,10 @@ public class UserServiceImpl implements UserService {
 
             String jwt = JwtUtil.createJWT(username);
 
-            return new Result(200,"登陆成功",jwt);
+            return new Result(StatusCode.LoginSuccess.getCode(),"登陆成功",jwt);
 
         }else{
-            return new Result(500,"用户已登录",null);
+            return new Result(StatusCode.UserOnline.getCode(), "用户已登录",null);
         }
 
     }
@@ -80,32 +81,31 @@ public class UserServiceImpl implements UserService {
      * @return  判断用户名是否存在的判断码
      */
     @Override
-    public synchronized int singup(User user, HttpServletRequest request) {
+    public synchronized Result singup(User user, HttpServletRequest request) {
         String username = user.getUsername();
         String password = user.getPassword();
         String email=user.getEmail();
         if(userDao.selectByUsername(username)!=null){//用户名已存在
             System.out.println("用户名已存在");
-            return 400;
+            return new Result(StatusCode.UserNameHasExist.getCode(), "用户名已存在",null);
         }else if(userDao.selectByEmail(email)!=null){//邮箱已被注册
             System.out.println("邮箱已被注册");
-            return 400;
+            return new Result(StatusCode.EmailHasExist.getCode(), "邮箱已被使用",null);
         }else {
             int number=new Random().nextInt(8999)+1000;//制造验证码
-            new Thread(()->{
-                try {
-                    mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
-                    System.out.println(number);
-                } catch (Exception e) {
-                    System.out.println("改邮箱错误");
-                }
-            }).start();
-            //将密码,邮箱,验证码以hash形式存储在redis,key是用户的用户名
+
+            //todo 像邮箱发送验证码
+            mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
+            System.out.println(number);
+
+            //todo 将注册信息存放在redis中
+            //将密码,邮箱,验证码以map形式存储在redis,key是用户的用户名,value是hashmap
             Map<String,String> map=new HashMap<>();
             map.put("password",password);map.put("email",email);map.put("code",""+number);
             redisCache.setCacheMap(username,map);
-            redisCache.expire(username,15,TimeUnit.MINUTES);
-            return 200;
+
+            redisCache.expire(username,15,TimeUnit.MINUTES);//十五分钟后自动销毁
+            return new Result(StatusCode.SingnupSuccess.getCode(), "注册成功,验证码已发送到邮箱,请在15分钟内输入",null);
         }
     }
 

@@ -24,7 +24,7 @@ public class UserController {
 
     //用户注册
     @RequestMapping("/signup")
-    public  int singup(@RequestBody User user, HttpServletRequest request){
+    public  Result singup(@RequestBody User user, HttpServletRequest request){
         return userService.singup(user,request);
     }
 
