@@ -7,7 +7,7 @@ public enum StatusCode {
     //成功
     LoginSuccess(200),//登陆成功
     LogOut(201),//登出
-
+    VerifySuccess(203),//邮箱验证码正确
 
     SingnupSuccess(202),//注册成功
 
@@ -21,7 +21,6 @@ public enum StatusCode {
     UserNameHasExist(304),//用户名已存在
     EmailHasExist(305),//邮箱已使用
     VerifyError(306);//邮箱验证码错误
-
 
     private int code;
 

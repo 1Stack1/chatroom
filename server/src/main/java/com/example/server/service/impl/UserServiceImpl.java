@@ -94,15 +94,20 @@ public class UserServiceImpl implements UserService {
         }else {
             int number=new Random().nextInt(8999)+1000;//制造验证码
 
+
+
             //todo 像邮箱发送验证码
-            mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
+            //mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
             System.out.println(number);
+
+
 
             //todo 将注册信息存放在redis中
             //将密码,邮箱,验证码以map形式存储在redis,key是用户的用户名,value是hashmap
             Map<String,String> map=new HashMap<>();
             map.put("password",password);map.put("email",email);map.put("code",""+number);
             redisCache.setCacheMap(username,map);
+
 
             redisCache.expire(username,15,TimeUnit.MINUTES);//十五分钟后自动销毁
             return new Result(StatusCode.SingnupSuccess.getCode(), "注册成功,验证码已发送到邮箱,请在15分钟内输入",null);
@@ -140,7 +145,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public int verify(String username,String  verifyCode){
+    public Result verify(String username,String  verifyCode){
         Map<String, Object> cacheMap = redisCache.getCacheMap(username);
         //因为执行这步操作之前如果用户执行力signup,就会将用户输入的密码存储在以用户名为Key的redis hash中,那么密码就不会为null
         System.out.println(cacheMap.get("code"));
@@ -150,10 +155,10 @@ public class UserServiceImpl implements UserService {
                 String password=(String)cacheMap.get("password");
                 String email=(String)cacheMap.get("email");
                 userDao.insertUsernameAndPasswordAndEmail(username,password,email);
-                return 200;
+                return new Result(StatusCode.VerifySuccess.getCode(), "邮箱验证成功",null);
             }
         }
-        return 400;
+        return new Result(StatusCode.VerifyError.getCode(), "邮箱验证失败",null);
     }
 
 

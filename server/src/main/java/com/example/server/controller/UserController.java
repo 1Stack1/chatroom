@@ -37,8 +37,8 @@ public class UserController {
 
 
     //验证用户发送的邮箱验证码
-    @RequestMapping("/verify")
-    public int verify(HttpServletRequest request){
+    @GetMapping("/verify")
+    public Result verify(HttpServletRequest request){
         String username = request.getParameter("username");
         String verifyCode=request.getParameter("verifyCode");
         return userService.verify(username,verifyCode);

@@ -27,7 +27,7 @@ public interface UserService {
     /**
      *验证验证码操作
      */
-    int verify(String username,String  verifyCode);
+    Result verify(String username,String  verifyCode);
 
 
     Result modifyPw(User user);
