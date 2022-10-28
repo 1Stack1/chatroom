@@ -92,6 +92,11 @@ class ServerApplicationTests {
 
     @Test
     public void test07(){
-
+        Set<String> set=new HashSet<>();
+        redisCache.setCacheSet("a",set).add("username");
+        redisCache.setCacheSet("a",set).add("asdas","sada");
+        for(Object s:redisCache.getCacheSet("a")){
+            System.out.println(s);
+        }
     }
 }

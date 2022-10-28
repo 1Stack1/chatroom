@@ -44,32 +44,35 @@ public class UserServiceImpl implements UserService {
      * @return  包含查询到的用户名和是否查询到用户的判断码
      */
     @Override
-    public synchronized Result login(User user) {
+    public  Result login(User user) {
         String username=user.getUsername();
-        if(!set.contains(username)) {//已登陆账号列表中不存在该用户
+        synchronized (this){//HashMap线程不安全
+            if(!set.contains(username)) {//已登陆账号列表中不存在该用户
 
-            //TODO 自定义AuthenticationManager的执行
-            UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                    =new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword());//将username和password封装为UsernamePasswordAuthenticationToken
-            Authentication authenticate
-                    = authenticationManager.authenticate(usernamePasswordAuthenticationToken);//将封装好的UsernamePasswordAuthenticationToken作为参数执行authenticate方法,
-                                                                                                // 在之后会执行UserDetailService的loadUserByUsername方法,会将令牌与数据库中查询(UserDetailService执行)的UserDetails对比
-                                                                                                //如果对比发现不是数据库中的对象不会进行下面的语句
+                //TODO 自定义AuthenticationManager的执行
+                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
+                        =new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword());//将username和password封装为UsernamePasswordAuthenticationToken
+                Authentication authenticate
+                        = authenticationManager.authenticate(usernamePasswordAuthenticationToken);//将封装好的UsernamePasswordAuthenticationToken作为参数执行authenticate方法,
+                // 在之后会执行UserDetailService的loadUserByUsername方法,会将令牌与数据库中查询(UserDetailService执行)的UserDetails对比
+                //如果对比发现不是数据库中的对象不会进行下面的语句
 
 
-            User user1 =(User) authenticate.getPrincipal();//将UserDetailsService中返回的UserDetails对象封装返回
-            String redisKey="login:"+username;//将登录的用户存储到redis中,下次访问其他URL只用携带带着username的token
-            redisCache.setCacheObject(redisKey,user1);
+                User user1 =(User) authenticate.getPrincipal();//将UserDetailsService中返回的UserDetails对象封装返回
+                String redisKey="login:"+username;//将登录的用户存储到redis中,下次访问其他URL只用携带带着username的token
+                redisCache.setCacheObject(redisKey,user1);
 
-            set.add(username);//将用户存储到set中表示用户已登陆
+                set.add(username);//将用户存储到set中表示用户已登陆
 
-            String jwt = JwtUtil.createJWT(username);
+                String jwt = JwtUtil.createJWT(username);
 
-            return new Result(StatusCode.LoginSuccess.getCode(),"登陆成功",jwt);
+                return new Result(StatusCode.LoginSuccess.getCode(),"登陆成功",jwt);
 
-        }else{
-            return new Result(StatusCode.UserOnline.getCode(), "用户已登录",null);
+            }else{
+                return new Result(StatusCode.UserOnline.getCode(), "用户已登录",null);
+            }
         }
+
 
     }
 
@@ -81,36 +84,41 @@ public class UserServiceImpl implements UserService {
      * @return  判断用户名是否存在的判断码
      */
     @Override
-    public synchronized Result singup(User user, HttpServletRequest request) {
+    public  Result singup(User user, HttpServletRequest request) {
         String username = user.getUsername();
         String password = user.getPassword();
         String email=user.getEmail();
-        if(userDao.selectByUsername(username)!=null){//用户名已存在
-            System.out.println("用户名已存在");
-            return new Result(StatusCode.UserNameHasExist.getCode(), "用户名已存在",null);
-        }else if(userDao.selectByEmail(email)!=null){//邮箱已被注册
-            System.out.println("邮箱已被注册");
-            return new Result(StatusCode.EmailHasExist.getCode(), "邮箱已被使用",null);
-        }else {
-            int number=new Random().nextInt(8999)+1000;//制造验证码
+        synchronized (this){
+            if(userDao.selectByUsername(username)!=null&&redisCache.getCacheSet("signupingUsername").contains(username)){//用户名已存在
+                System.out.println("用户名已存在");
+                return new Result(StatusCode.UserNameHasExist.getCode(), "用户名已存在",null);
+            }else if(userDao.selectByEmail(email)!=null&&redisCache.getCacheSet("signupingEmail").contains(email)){//邮箱已被注册
+                System.out.println("邮箱已被注册");
+                return new Result(StatusCode.EmailHasExist.getCode(), "邮箱已被使用",null);
+            }else {
+                int number=new Random().nextInt(8999)+1000;//制造验证码
 
 
 
-            //todo 像邮箱发送验证码
-            //mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
-            System.out.println(number);
+                //todo 像邮箱发送验证码
+                //mailService.sendSimpleEmail(email,"chatroom验证码","这是您的邮箱验证码："+number+"\n请在15分钟内将其输入");//向邮箱发送验证码
+                System.out.println(number);
 
 
 
-            //todo 将注册信息存放在redis中
-            //将密码,邮箱,验证码以map形式存储在redis,key是用户的用户名,value是hashmap
-            Map<String,String> map=new HashMap<>();
-            map.put("password",password);map.put("email",email);map.put("code",""+number);
-            redisCache.setCacheMap(username,map);
+                //todo 将注册信息存放在redis中
+                //将密码,邮箱,验证码以map形式存储在redis,key是用户的用户名,value是hashmap
+                Map<String,String> map=new HashMap<>();
+                map.put("password",password);map.put("email",email);map.put("code",""+number);
+                redisCache.setCacheMap(username,map);
+                //将用户名,email存储到redis中
+                redisCache.setCacheSet("signupingUsername",redisCache.getCacheSet("signupingUsername")).add(username);
+                redisCache.setCacheSet("signupingEmail",redisCache.getCacheSet("signupingEmail")).add(username);
 
 
-            redisCache.expire(username,15,TimeUnit.MINUTES);//十五分钟后自动销毁
-            return new Result(StatusCode.SingnupSuccess.getCode(), "注册成功,验证码已发送到邮箱,请在15分钟内输入",null);
+                redisCache.expire(username,15,TimeUnit.MINUTES);//十五分钟后自动销毁
+                return new Result(StatusCode.SingnupSuccess.getCode(), "注册成功,验证码已发送到邮箱,请在15分钟内输入",null);
+            }
         }
     }
 

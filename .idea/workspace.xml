@@ -8,10 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/com/example/server/ServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/com/example/server/ServerApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\chat" />
       <recent name="D:\Project\chat\server" />
       <recent name="D:\Project\chat\common" />
     </key>
@@ -103,17 +103,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServerApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DaoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
@@ -178,6 +167,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerApplicationTests.test07" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.server" />
+      <option name="MAIN_CLASS_NAME" value="com.example.server.ServerApplicationTests" />
+      <option name="METHOD_NAME" value="test07" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="chat" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.chat.ChatApplication" />
@@ -215,6 +220,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServerApplicationTests.test07" />
         <item itemvalue="JUnit.ServerApplicationTests.test02" />
         <item itemvalue="JUnit.DaoApplicationTests.test02" />
         <item itemvalue="JUnit.DaoApplicationTests.contextLoads" />
@@ -245,7 +251,9 @@
       <workItem from="1666791262881" duration="1341000" />
       <workItem from="1666793439716" duration="1168000" />
       <workItem from="1666866940563" duration="3337000" />
-      <workItem from="1666871070373" duration="8542000" />
+      <workItem from="1666871070373" duration="9486000" />
+      <workItem from="1666960145264" duration="145000" />
+      <workItem from="1666960475762" duration="3056000" />
     </task>
     <servers />
   </component>
