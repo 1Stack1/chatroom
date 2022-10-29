@@ -64,6 +64,8 @@ public class UserServiceImpl implements UserService {
 
                 set.add(username);//将用户存储到set中表示用户已登陆
 
+                userDao.updateStatusToOnlineByUsername(username);
+
                 String jwt = JwtUtil.createJWT(username);
 
                 return new Result(StatusCode.LoginSuccess.getCode(),"登陆成功",jwt);

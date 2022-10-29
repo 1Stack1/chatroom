@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.common.bean.User;
 import com.example.common.constant.OnlineUser;
 import com.example.common.utils.RedisCache;
+import com.example.dao.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
@@ -16,6 +17,9 @@ import java.io.InputStreamReader;
 
 @Component
 public class LogoutHandlerImpl implements LogoutHandler {
+
+    @Autowired
+    UserDao userDao;
 
     @Autowired
     RedisCache redisCache;
@@ -52,5 +56,7 @@ public class LogoutHandlerImpl implements LogoutHandler {
         redisCache.deleteObject(redisKey);
 
         OnlineUser.onlineUserSet.remove(username);
+
+        userDao.updateStatusToDownLineByUsername(username);
     }
 }

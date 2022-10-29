@@ -41,4 +41,8 @@ public interface UserDao {
                        @Param("realname") String realname,
                        @Param("college") String college,
                        @Param("email") String email);
+
+    int updateStatusToOnlineByUsername(String username);
+
+    int updateStatusToDownLineByUsername(String username);
 }
