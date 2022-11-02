@@ -21,7 +21,7 @@ public class FileController {
 
     @PostMapping("/upload")
     @ResponseBody
-    public String upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) throws IOException {
+    public String upload(@RequestParam("file") MultipartFile file) throws IOException {
 
         if(file.isEmpty()){//未上传文件时
             return "file is empty";
