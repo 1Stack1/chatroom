@@ -7,7 +7,7 @@ public interface MailService {
     /**
      * 普通文件发送
      */
-    void sendSimpleEmail(String email,String subject,String text);
+    void sendSimpleEmail(String email, String subject, String text);
 
     /**
      * html格式文件发送

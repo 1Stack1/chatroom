@@ -5,8 +5,7 @@ logging:
       example:
         dao:
           dao: debug
-mybatis:
-  mapperLocations: classpath:mapper/*.xml
+mybatis-plus:
   type-aliases-package: com.example.common.bean
 spring:
   #mysql配置
@@ -14,4 +13,4 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/chat?serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password:
+    password: licehan123

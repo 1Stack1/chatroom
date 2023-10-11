@@ -21,13 +21,13 @@ public class MailServiceImpl implements MailService {
     private String from;
 
 
-
     /**
      * 普通文件发送
+     *
      * @param email 接收方的邮箱
      */
     @Override
-    public void sendSimpleEmail(String email,String subject,String text){
+    public void sendSimpleEmail(String email, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(from);//配置发送方
         message.setTo(email);//配置接收方

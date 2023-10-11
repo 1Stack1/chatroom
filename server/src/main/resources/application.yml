@@ -2,17 +2,17 @@ spring:
   #mysql配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/chat?serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://abnlch.fun:13306/chat?serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: licehan123
+    password: 123
   thymeleaf:
     check-template: false
     check-template-location: false
-  data:
-    mongodb:
-      host: localhost
-      database: chat
-      port: 27017
+#  data:
+#    mongodb:
+#      host: localhost
+#      database: chat
+#      port: 27017
   #邮箱配置
   mail:
     host: smtp.qq.com
@@ -25,16 +25,18 @@ spring:
 mybatis:
   mapperLocations: classpath*:mapper/*.xml
   type-aliases-package: com.example.common.bean
-
-
 server:
   port: 8443
   servlet:
-    context-path: "/chatroom"
-
+    context-path: "/chatroom/api"
 #打印sql执行语句
 logging:
+  file:
+    #使用相对路径,就会在项目根目录下生成一个info.log文件
+    name: /home/chat.log
+  #日志级别 root表示所有包，也可以单独配置具体包 fatal error warn info debug trace off
   level:
+    root: info
     com:
       example:
         dao:

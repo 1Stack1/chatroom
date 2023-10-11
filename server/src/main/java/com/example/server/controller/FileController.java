@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,22 +24,22 @@ public class FileController {
     @ResponseBody
     public String upload(@RequestParam("file") MultipartFile file) throws IOException {
 
-        if(file.isEmpty()){//未上传文件时
+        if (file.isEmpty()) {//未上传文件时
             return "file is empty";
         }
-        log.info("文件类型:                "+file.getContentType());
-        log.info("文件名称:                "+file.getOriginalFilename());
-        log.info("文件大小:                "+file.getSize());
+        log.info("文件类型:                " + file.getContentType());
+        log.info("文件名称:                " + file.getOriginalFilename());
+        log.info("文件大小:                " + file.getSize());
         log.info("文件路径:                ");
 
-        String url= ResourceUtils.getURL("classpath:").getPath()+"static";
+        String url = ResourceUtils.getURL("classpath:").getPath() + "static";
 
-        File newFile=new File(url);
-        if(!newFile.exists()) {//如果文件夹不存在就新建
+        File newFile = new File(url);
+        if (!newFile.exists()) {//如果文件夹不存在就新建
             newFile.mkdirs();
         }
 
-        file.transferTo(new File(newFile,"yuzhou.png"));//上传
+        file.transferTo(new File(newFile, "yuzhou.png"));//上传
 
         return "ha";
 
@@ -47,7 +48,7 @@ public class FileController {
     @GetMapping("/download")
     public void download(HttpServletResponse response, @RequestParam("file") String file) throws IOException {
 
-        String url=ResourceUtils.getURL("classpath:").getPath()+"static\\"+file;//获取下载的文件的路径
+        String url = ResourceUtils.getURL("classpath:").getPath() + "static\\" + file;//获取下载的文件的路径
 
         FileInputStream fileInputStream = new FileInputStream(new File(url));//获取文件输入流
 
@@ -56,9 +57,9 @@ public class FileController {
         ServletOutputStream outputStream = response.getOutputStream();//获取response的输出流
 
         //TODO 将文件写入response的输出流中
-        int len=0;
-        byte[] data=new byte[1024];
-        while((len=fileInputStream.read(data))!=-1){
+        int len = 0;
+        byte[] data = new byte[1024];
+        while ((len = fileInputStream.read(data)) != -1) {
             outputStream.write(data);
         }
 

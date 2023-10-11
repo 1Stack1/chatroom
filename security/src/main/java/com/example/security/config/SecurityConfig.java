@@ -1,3 +1,4 @@
+/*
 package com.example.security.config;
 
 
@@ -32,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private LogoutHandler logoutHandler;
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -46,21 +47,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 对于登录接口 允许匿名访问
-                .antMatchers("/verify","/login","/signup","/modifypw","/chat/*").anonymous()
+                .antMatchers("/verify", "/login", "/signup", "/modifypw", "/chat/*").anonymous()
 
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
 
         http.logout().addLogoutHandler(logoutHandler);//添加登出适配器
 
-        http.addFilterBefore(jwtAuthenticationTokenFilter,UsernamePasswordAuthenticationFilter.class);//在UsernamePasswordAuthenticationFilter前添加过滤器
+        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);//在UsernamePasswordAuthenticationFilter前添加过滤器
 
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler).authenticationEntryPoint(authenticationEntryPoint);//添加认证失败和授权失败适配器
 
         http.cors();//开启跨域请求
     }
-
-
 
 
     @Bean
@@ -69,3 +68,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 }
+*/

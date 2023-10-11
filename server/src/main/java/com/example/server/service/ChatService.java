@@ -6,23 +6,23 @@ import javax.websocket.Session;
 public interface ChatService {
 
     /**
-     *websocket onopen操作
+     * websocket onopen操作
      */
-    void onOpen(Session session,String username);
+    void onOpen(Session session, Integer userId);
 
     /**
      * websocket onclose操作
      */
-    void onClose(String username);
+    void onClose(Integer userId);
 
     /**
      * websocket onmessage操作
      */
-    void onMessage(String message);
+    void onMessage(String message, Integer userId);
 
     /**
      * websocket onerror操作
      */
-    void onError(Session session,Throwable error);
+    void onError(Session session, Throwable error);
 
 }

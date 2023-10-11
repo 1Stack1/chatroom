@@ -7,6 +7,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class OnlineUser {
-    public static final Map<String, Session> onlineUserMap = new ConcurrentHashMap<>();
-    public static final Set<String> onlineUserSet=new HashSet<>();
+    public static final Map<Integer, Session> onlineUserMap = new ConcurrentHashMap<>();
+    public static final Set<String> onlineUserSet = new HashSet<>();
 }

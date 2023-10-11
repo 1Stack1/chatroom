@@ -4,18 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dao.dao.UserDao">
     <select id="selectUserByUsernameOrEmailAndPassword" resultType="User">
-        SELECT username FROM `sys_user` WHERE (username=#{usernameOrEmail} or email=#{usernameOrEmail}) AND password =#{password};
-	</select>
+        SELECT username FROM `sys_user` WHERE (username=#{usernameOrEmail} or email=#{usernameOrEmail}) AND password
+        =#{password};
+    </select>
+
+    <select id="selectUserDto" resultType="User">
+        SELECT id,username from sys_user where username = #{username} and `password` = #{password}
+    </select>
 
     <select id="selectRoleByUsername" resultType="string">
         SELECT rolename as authoritiesStrs
         FROM sys_role r
-                 JOIN sys_user_role ur ON r.id=ur.role_Id
-                 JOIN sys_user u  ON u.id=ur.user_Id
+        JOIN sys_user_role ur ON r.id=ur.role_Id
+        JOIN sys_user u ON u.id=ur.user_Id
         WHERE u.id=(
-            SELECT id
-            FROM sys_user
-            WHERE username=#{username})
+        SELECT id
+        FROM sys_user
+        WHERE username=#{username})
     </select>
 
     <select id="selectByUsername" resultType="User">

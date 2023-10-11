@@ -1,4 +1,4 @@
-package com.example.common.bean;
+package com.example.common.constant;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ public enum StatusCode {
     UpdateInfoSuccess(204),//修改用户信息成功
     SingnupSuccess(202),//注册成功
 
-     //失败
+    //失败
     NoAuthentication(300),//未认证
     NoAuthorize(301),//未授权
     LoginFail(302),//用户名或密码错误

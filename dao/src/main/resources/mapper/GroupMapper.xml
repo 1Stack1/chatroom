@@ -3,17 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dao.dao.GroupDao">
-    <select id="selectGroupsByUserId" resultType="Group">
-        select id,group_name as groupName,max_num as maxNum,now_num as nowNum
-        from `group`
-        where owner_id=#{id}
-	</select>
-
     <select id="selectGroupsByUserName" resultType="Group">
-        select id,group_name as groupName,max_num as maxNum,now_num as nowNum
-        from `group`
-        where owner_id=(select id
-                        from sys_user
-                        where username=#{username})
+        SELECT g.group_name as groupName, g.id as id, g.max_num as maxNum, g.now_num as nowNum,g.own_id as ownId
+        FROM sys_user u left join `tb_group` g
+                                  on u.id = g.own_id
+        where u.username = #{username}
     </select>
 </mapper>

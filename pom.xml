@@ -28,6 +28,7 @@
         <springboot.version>2.7.4</springboot.version>
         <mysql.version>8.0.30</mysql.version>
         <mybatis.version>2.2.2</mybatis.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <fastjson.version>1.2.70</fastjson.version>
         <jwt.version>0.9.0</jwt.version>
         <jackson.version>2.13.4</jackson.version>
@@ -79,12 +80,6 @@
                 <version>${springboot.version}</version>
             </dependency>
 
-            <!--mongodb-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-mongodb</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
 
             <!--thymleaf-->
             <dependency>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.dao.HistoryDao">
+    <update id="updateUnreceive">
+        update tb_history
+        set state = 1
+        where fromId = #{fromId} and toId = #{toId}
+    </update>
+
+    <select id="selectHistoryById" resultType="History">
+        select id,fromId,toId,content,`state`
+        from tb_history
+        where (fromId = #{toUserId} and toId = #{userId}) or (fromId = #{userId} and toId = #{toUserId})
+	</select>
+
+    <select id="getUnrecivedMsgs" resultType="com.example.common.dto.UnreceivedMsg">
+        select h1.content as content,h1.fromId as fromId,u.username as fromUsername,t2.count as count
+        from tb_history h1 left join sys_user u
+        on h1.fromId = u.id
+                            right join (
+                                select max(h2.id) as max_id,count(1) as count
+                                from tb_history h2
+                                where h2.toId = #{userId} and h2.state = 0
+                                group by h2.fromId
+                            ) t2
+        on h1.id = t2.max_id
+    </select>
+
+    <insert id="addHistory">
+        insert into tb_history(id,fromId,toId,content,`state`)
+        values(#{id},#{fromId},#{toId},#{content},#{state})
+    </insert>
+
+    <insert id="addHistoryList">
+        insert into tb_history(id,fromId,toId,content,`state`) values
+        <foreach collection="list" separator="," item="item">
+            (#{item.id},#{item.fromId},#{item.toId},#{item.content},#{item.state})
+        </foreach>
+    </insert>
+</mapper>

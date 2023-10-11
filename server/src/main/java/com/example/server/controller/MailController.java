@@ -12,7 +12,7 @@ public class MailController {
     private MailService mailService;
 
     @GetMapping("/sendMail")
-    public void sendMail(){
-        mailService.sendSimpleEmail("","","");
+    public void sendMail() {
+        mailService.sendSimpleEmail("", "", "");
     }
 }

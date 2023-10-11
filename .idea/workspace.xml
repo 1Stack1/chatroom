@@ -8,8 +8,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ace615-85b4-41db-950c-cad62111e586" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/History.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Organization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/constant/RedisPrefix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/constant/TimeInterval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/dto/UnreceivedMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/HistoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/OrganizationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/HistoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/OrganizationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/timer/UpdateDataSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/constant/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/ToEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/dto/ToEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/constant/OnlineUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/constant/OnlineUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/FastJsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/FastJsonRedisSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/RedisCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/RedisCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/WebUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/WebUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/FriendDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/GroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/GroupDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/example/dao/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/mapper/FriendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/FriendMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/mapper/GroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/example/dao/DaoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/AccessDeniedHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/AccessDeniedHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/AuthenticationEntryPointImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/AuthenticationEntryPointImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/LogoutHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/handler/LogoutHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/config/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/MailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/reposity/HistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/reposity/HistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/ChatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/ChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/com/example/server/ServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/com/example/server/ServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/聊天网站api.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,19 +77,31 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="mybatis-mapper" />
+        <option value="mybatis-config" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="mybatis-mapper" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -70,7 +140,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../leetcode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -89,11 +159,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\chat\server\src\main\java\com\example\server\timer" />
       <recent name="D:\Project\chat" />
       <recent name="D:\Project\chat\server" />
       <recent name="D:\Project\chat\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\chat\dao\src\main\resources\mapper" />
+      <recent name="D:\Project\chat\server\src\main\resources\mapper" />
       <recent name="D:\Project\chat\dao\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -102,6 +175,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServerApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DaoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
@@ -219,11 +303,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServerApplicationTests.test07" />
+        <item itemvalue="JUnit.ServerApplicationTests.test01" />
         <item itemvalue="JUnit.ServerApplicationTests.test02" />
         <item itemvalue="JUnit.DaoApplicationTests.test02" />
+        <item itemvalue="JUnit.ServerApplicationTests.test07" />
         <item itemvalue="JUnit.DaoApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.ServerApplicationTests.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -261,6 +345,30 @@
       <workItem from="1667363055859" duration="51000" />
       <workItem from="1667375986617" duration="2215000" />
       <workItem from="1667383916597" duration="954000" />
+      <workItem from="1667389480717" duration="1291000" />
+      <workItem from="1667456006457" duration="31000" />
+      <workItem from="1667553497731" duration="701000" />
+      <workItem from="1668131887952" duration="860000" />
+      <workItem from="1668952118935" duration="14000" />
+      <workItem from="1682751207217" duration="1080000" />
+      <workItem from="1682765482119" duration="6603000" />
+      <workItem from="1683034865670" duration="3037000" />
+      <workItem from="1683090617563" duration="13422000" />
+      <workItem from="1683200549302" duration="4813000" />
+      <workItem from="1683279878913" duration="1280000" />
+      <workItem from="1683343157175" duration="16796000" />
+      <workItem from="1683461110110" duration="5357000" />
+      <workItem from="1683524312191" duration="18834000" />
+      <workItem from="1683590269721" duration="6302000" />
+      <workItem from="1683608749614" duration="2983000" />
+      <workItem from="1684384534280" duration="118000" />
+      <workItem from="1685785063812" duration="53000" />
+      <workItem from="1685954254495" duration="373000" />
+      <workItem from="1685961877838" duration="2040000" />
+      <workItem from="1686054379481" duration="47000" />
+      <workItem from="1696590961182" duration="2244000" />
+      <workItem from="1696678174737" duration="36000" />
+      <workItem from="1697019536313" duration="3874000" />
     </task>
     <servers />
   </component>
