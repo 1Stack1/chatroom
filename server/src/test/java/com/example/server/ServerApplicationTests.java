@@ -1,13 +1,8 @@
 package com.example.server;
 
-import com.example.common.bean.History;
-import com.example.common.bean.User;
+
 /*import com.example.server.reposity.HistoryRepository;*/
-import com.example.dao.dao.FriendDao;
-import com.example.dao.dao.GroupDao;
-import com.example.dao.dao.HistoryDao;
-import com.example.dao.dao.UserDao;
-import com.example.common.utils.RedisCache;
+import com.example.server.dao.HistoryDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //websocketConfig会影响test

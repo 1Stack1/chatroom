@@ -1,7 +1,7 @@
 package com.example.server.service;
 
 import com.example.common.utils.Result;
-import com.example.common.bean.User;
+import com.example.server.bean.User;
 
 
 import javax.servlet.http.HttpServletRequest;

@@ -37,8 +37,6 @@
     <modules>
         <module>common</module>
         <module>server</module>
-        <module>security</module>
-        <module>dao</module>
     </modules>
 
 

@@ -1,39 +1,28 @@
+server:
+  port: 8443
+  servlet:
+    context-path: "/chatroom/api"
 spring:
-  #mysql配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://abnlch.fun:13306/chat?serverTimezone=GMT%2B8&useSSL=false
     username: root
     password: 123
-  thymeleaf:
-    check-template: false
-    check-template-location: false
-#  data:
-#    mongodb:
-#      host: localhost
-#      database: chat
-#      port: 27017
-  #邮箱配置
-  mail:
-    host: smtp.qq.com
-    username:
-    password: fekgfeoytezudigd
-  #redis配置
-  redis:
-    host: localhost
-    port: 6379
+#  mail:
+#    host: smtp.qq.com
+#    username:
+#    password: fekgfeoytezudigd
+#  redis:
+#    host: localhost
+#    port: 6379
+
 mybatis:
-  mapperLocations: classpath*:mapper/*.xml
-  type-aliases-package: com.example.common.bean
-server:
-  port: 8443
-  servlet:
-    context-path: "/chatroom/api"
-#打印sql执行语句
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.example.server.bean
 logging:
-  file:
-    #使用相对路径,就会在项目根目录下生成一个info.log文件
-    name: /home/chat.log
+#  file:
+#    #使用相对路径,就会在项目根目录下生成一个info.log文件
+#    name: /home/chat.log
   #日志级别 root表示所有包，也可以单独配置具体包 fatal error warn info debug trace off
   level:
     root: info

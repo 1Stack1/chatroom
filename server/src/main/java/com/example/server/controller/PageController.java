@@ -1,16 +1,16 @@
 package com.example.server.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.example.common.bean.Friend;
-import com.example.common.bean.Group;
-import com.example.common.bean.History;
-import com.example.common.bean.Organization;
+import com.example.server.bean.Friend;
+import com.example.server.bean.Group;
+import com.example.server.bean.History;
+import com.example.server.bean.Organization;
 import com.example.common.constant.TimeInterval;
 import com.example.common.dto.UnreceivedMsg;
-import com.example.dao.dao.FriendDao;
-import com.example.dao.dao.GroupDao;
-import com.example.dao.dao.HistoryDao;
-import com.example.dao.dao.OrganizationDao;
+import com.example.server.dao.FriendDao;
+import com.example.server.dao.GroupDao;
+import com.example.server.dao.HistoryDao;
+import com.example.server.dao.OrganizationDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

@@ -1,11 +1,11 @@
 package com.example.server.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.example.common.bean.*;
 import com.example.common.constant.OnlineUser;
 import com.example.common.constant.TimeInterval;
-import com.example.dao.dao.GroupDao;
-import com.example.dao.dao.OrganizationDao;
+import com.example.server.dao.GroupDao;
+import com.example.server.dao.OrganizationDao;
+import com.example.server.bean.History;
 import com.example.server.service.ChatService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.buf.StringUtils;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.dao.GroupDao">
+    <select id="selectGroupsByUserName" resultType="Group">
+        SELECT g.group_name as groupName, g.id as id, g.max_num as maxNum, g.now_num as nowNum,g.own_id as ownId
+        FROM sys_user u left join `tb_group` g
+                                  on u.id = g.own_id
+        where u.username = #{username}
+    </select>
+</mapper>

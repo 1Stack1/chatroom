@@ -3,7 +3,6 @@ package com.example.server.controller;
 
 import com.example.server.service.ChatService;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;

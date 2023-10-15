@@ -1,3 +1,4 @@
+/*
 package com.example.server.service.impl;
 
 import com.example.server.service.MailService;
@@ -21,11 +22,13 @@ public class MailServiceImpl implements MailService {
     private String from;
 
 
-    /**
+    */
+/**
      * 普通文件发送
      *
      * @param email 接收方的邮箱
-     */
+     *//*
+
     @Override
     public void sendSimpleEmail(String email, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -37,9 +40,11 @@ public class MailServiceImpl implements MailService {
     }
 
 
-    /**
+    */
+/**
      * html格式文件发送
-     */
+     *//*
+
     @Override
     public void sendHtmlEmail() throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();//创建一个MINE消息
@@ -54,3 +59,4 @@ public class MailServiceImpl implements MailService {
 
 
 }
+*/

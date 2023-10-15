@@ -1,10 +1,11 @@
+/*
 package com.example.server.timer;
 
 import com.alibaba.fastjson.JSON;
-import com.example.common.bean.History;
+import com.example.server.bean.History;
 import com.example.common.constant.TimeInterval;
-import com.example.dao.dao.HistoryDao;
-import com.example.dao.dao.OrganizationDao;
+import com.example.server.dao.HistoryDao;
+import com.example.server.dao.OrganizationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.ListOperations;
@@ -20,9 +21,11 @@ import java.util.stream.Collectors;
 
 import static com.example.common.constant.RedisPrefix.*;
 
+*/
 /**
  * 将redis中的聊天记录存到数据库定时任务
- */
+ *//*
+
 @Component
 public class UpdateDataSchedule {
 
@@ -36,9 +39,11 @@ public class UpdateDataSchedule {
     @Autowired
     OrganizationDao organizationDao;
 
-    /**
+    */
+/**
      * 单聊历史记录刷到数据库
-     */
+     *//*
+
     @Scheduled(cron = "0/3 * * * * ?")
     private void SangleChatToSql() {
         //1.从获取聊天记录
@@ -64,9 +69,11 @@ public class UpdateDataSchedule {
 
     }
 
-    /**
+    */
+/**
      * 更新未接受到的消息
-     */
+     *//*
+
     @Scheduled(cron = "0/3 * * * * ?")
     private void updateUnreceive() {
         //1.需要更新消息信息
@@ -133,3 +140,4 @@ public class UpdateDataSchedule {
     }
 
 }
+*/

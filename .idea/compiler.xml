@@ -8,8 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="server" />
-        <module name="security" />
-        <module name="dao" />
         <module name="common" />
       </profile>
     </annotationProcessing>

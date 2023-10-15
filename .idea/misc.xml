@@ -10,8 +10,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/server/pom.xml" />
-        <option value="$PROJECT_DIR$/security/pom.xml" />
-        <option value="$PROJECT_DIR$/dao/pom.xml" />
       </list>
     </option>
   </component>

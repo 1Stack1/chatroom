@@ -26,17 +26,6 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!--<dependency>
-            <groupId>com.example</groupId>
-            <artifactId>security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>-->
-
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--springboot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -56,30 +45,16 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
-        <!--redis-->
+       <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-        <!--mongodb-->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>-->
-
-        <!--thymleaf-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-
-
-        <!--mail-->
+        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--websocket-->
         <dependency>
@@ -99,17 +74,9 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--jwt-->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
     </dependencies>

@@ -2,20 +2,16 @@ package com.example.server.service.impl;
 
 import com.example.common.utils.Result;
 import com.example.common.constant.StatusCode;
-import com.example.common.bean.User;
 import com.example.common.constant.OnlineUser;
-import com.example.dao.dao.UserDao;
-import com.example.server.service.MailService;
+import com.example.server.bean.User;
+import com.example.server.dao.UserDao;
 import com.example.server.service.UserService;
-import com.example.common.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
-/*import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;*/
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
@@ -31,13 +27,11 @@ public class UserServiceImpl implements UserService {
     /*@Autowired
     PasswordEncoder encoder;*/
 
-    @Autowired
-    MailService mailService;
-    @Resource
-    RedisCache redisCache;
-
     /*@Autowired
-    AuthenticationManager authenticationManager;*/
+    MailService mailService;*/
+
+    @Autowired
+    AuthenticationManager authenticationManager;
 
 
     /**
@@ -52,34 +46,25 @@ public class UserServiceImpl implements UserService {
         synchronized (this) {//HashMap线程不安全
             if (!set.contains(username)) {//已登陆账号列表中不存在该用户
 
-                /*//自定义AuthenticationManager的执行
+                //自定义AuthenticationManager的执行
+
+                //将username和password封装为UsernamePasswordAuthenticationToken,接下来使用该令牌与userDetail对比
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                        = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());//将username和password封装为UsernamePasswordAuthenticationToken
-                Authentication authenticate
-                        = authenticationManager.authenticate(usernamePasswordAuthenticationToken);//将封装好的UsernamePasswordAuthenticationToken作为参数执行authenticate方法,
+                        = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
+
+
+                //将封装好的UsernamePasswordAuthenticationToken作为参数执行authenticate方法,
                 // 在之后会执行UserDetailService的loadUserByUsername方法,会将令牌与数据库中查询(UserDetailService执行)的UserDetails对比
-                //如果对比发现不是数据库中的对象不会进行下面的语句*/
+                Authentication authenticate
+                        = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
 
                 /*User user1 = (User) authenticate.getPrincipal();//将UserDetailsService中返回的UserDetails对象封装返回*/
 
-                User user1 = userDao.selectUserDto(username, user.getPassword());
-                if(user1 != null){
-                    return new Result(StatusCode.LoginSuccess.getCode(), "登陆成功", user1);
-                }else{
-                    return new Result(StatusCode.LoginFail.getCode(), "登陆失败", null);
-                }
 
-                /*String redisKey = "login:" + username;//将登录的用户存储到redis中,下次访问其他URL只用携带带着username的token
-                *//*redisCache.setCacheObject(redisKey, user1);*//*
+                SecurityContextHolder.getContext().setAuthentication(authenticate);
 
-                set.add(username);//将用户存储到set中表示用户已登陆
-
-                userDao.updateStatusToOnlineByUsername(username);
-
-                String jwt = JwtUtil.createJWT(username);*/
-
-
+                return new Result(StatusCode.LoginSuccess.getCode(),"success",null);
             } else {
                 return new Result(StatusCode.UserOnline.getCode(), "用户已登录", null);
             }

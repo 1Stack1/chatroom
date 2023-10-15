@@ -1,3 +1,4 @@
+/*
 package com.example.server.controller;
 
 
@@ -16,3 +17,4 @@ public class MailController {
         mailService.sendSimpleEmail("", "", "");
     }
 }
+*/

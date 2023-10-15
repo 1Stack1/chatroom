@@ -1,12 +1,10 @@
 package com.example.server.controller;
 
 import com.example.common.utils.Result;
-import com.example.common.bean.User;
+import com.example.server.bean.User;
 import com.example.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-/*import org.springframework.security.access.prepost.PreAuthorize;*/
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -22,11 +20,17 @@ public class UserController {
         return userService.login(user);
     }
 
+    @PostMapping ("/hello")
+    public Result hello()  {
+        return null;
+    }
+
     //用户注册
     @RequestMapping("/signup")
     public Result singup(@RequestBody User user, HttpServletRequest request) {
         return userService.singup(user, request);
     }
+
 
 
     //修改用户密保信息
